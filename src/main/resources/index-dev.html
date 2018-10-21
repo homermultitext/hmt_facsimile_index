@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homer Multitext Index (Development 1.0.0)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="application.css">
+</head>
+<body id="body">
+
+<script type="text/javascript" src="../hmtIndex-fastopt.js"></script>
+<script>
+		var defaultServiceUrl = "http://beta.hpcc.uh.edu/scs/";
+		var defaultAppUrl = "http://www.homermultitext.org/hmt-digital/index.html";
+		var defaultICTUrl = "http://www.homermultitext.org/ict2/index.html";
+		var dseMSMap = Array(
+				{ urn: "urn:cite2:hmt:va_dse.v1:" , 
+				text: "urn:cts:greekLit:tlg0012.tlg001.msA:",
+				label: "The Venetus A (Marcianus Graecus Z. 454 / 822)" , 
+				url: "https://homermultitext.github.io/facsimiles/venetus-a/" },
+				{ urn: "urn:cite2:hmt:vb_dse.v1:" , 
+				text: "urn:cts:greekLit:tlg0012.tlg001.msB:",
+				label: "otherMS" , 
+				url: "https://other" }
+		);
+		hmtIndex.MainController.main(defaultServiceUrl, defaultAppUrl, defaultICTUrl, dseMSMap);
+</script>
+</body>
+</html>
