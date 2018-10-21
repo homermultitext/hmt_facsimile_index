@@ -44,6 +44,9 @@ object MainView {
 		</header>
 
 		<article id="main_Container">
+
+		<p id="menu"> <a href="http://www.homermultitext.org">The Homer Multitext</a> | <a href="http://homermultitext.blogspot.com">HMT Blog</a> </p>
+
 		{ MainView.mainMessageDiv.bind }
 		{ MainView.collectionSelector.bind }
 		{ MainView.passageInput.bind }
@@ -226,7 +229,7 @@ object MainView {
 	@dom
 	def footer = {
 		<p><a href="http://www.homermultitext.org">The Homer Multitext</a>, Casey Dué and Mary Ebbott, edd. The Center for Hellenic Studies of Harvard University (2002–2018).
-		CITE/CTS is ©2002–2018 Neel Smith and Christopher Blackwell. This implementation of the <a href="http://cite-architecture.github.io">CITE</a> data models was written by Neel Smith and Christopher Blackwell using <a href="https://www.scala-lang.org">Scala</a>, <a href="http://www.scala-js.org">Scala-JS</a>, and <a href="https://github.com/ThoughtWorksInc/Binding.scala">Binding.scala</a>. Licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL 3.0</a>. Sourcecode on <a href="https://github.com/cite-architecture/hmtIndex">GitHub</a>. Copyright and licensing information for the default library is available <a href="https://raw.githubusercontent.com/Eumaeus/cts-demo-corpus/master/CEX-Files/LICENSE.markdown">here</a>. Report bugs by <a href="https://github.com/cite-architecture/CITE-App/issues">filing issues on GitHub.</a>
+		CITE/CTS is ©2002–2018 Neel Smith and Christopher Blackwell. This implementation of the <a href="http://cite-architecture.github.io">CITE</a> data models was written by Neel Smith and Christopher Blackwell using <a href="https://www.scala-lang.org">Scala</a>, <a href="http://www.scala-js.org">Scala-JS</a>, and <a href="https://github.com/ThoughtWorksInc/Binding.scala">Binding.scala</a>. Licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL 3.0</a>. Sourcecode on <a href="https://github.com/homermultitext/hmt_facsimile_index">GitHub</a>. Report bugs by <a href="https://github.com/homermultitext/hmt_facsimile_index/issues">filing issues on GitHub.</a>
 		</p>
 	}
 
