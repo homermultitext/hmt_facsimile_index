@@ -29,6 +29,13 @@
 	background-color: #eef;
 }
 
+.imgSpan {
+	display: block;
+}
+
+img.facsImage {
+	border: 1px solid black;
+}
 
 
 /* CiteLinks */

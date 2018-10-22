@@ -185,7 +185,7 @@ object MainView {
 				for (f <- MainModel.folios) yield {
 					<li>
 						<i>Iliad</i>
-						{ s"${f.textUrn.passageComponent}:" }
+						{ s"${f.textUrn.passageComponent}" }
 						{ 
 							f.facsimileUrl match {
 								case Some(u) => {
@@ -215,6 +215,11 @@ object MainView {
 				<a href={ s"${MainModel.appUrl.value}?urn=${f.imageUrn.get}" }>image</a>,
 				<a href={ s"${MainModel.appUrl.value}?urn=${f.textUrn}" }>text</a>,
 				<a href={ s"${MainModel.appUrl.value}?urn=${f.surfaceUrn.get}" }>folio</a>.
+			</span>
+			<span class="imgSpan">
+				<a href={ s"${f.facsimileUrl.get}" }>
+				<img class="facsImage" src={ s"${MainModel.serviceUrl.value}image/100/300/${f.imageUrn.get}" }/>
+				</a>
 			</span>
 		</span>
 	}
