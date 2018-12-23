@@ -56,6 +56,8 @@ object MainController {
 
 	}
 
+	
+
 	/*
 	 	Handles displaying messages to the user, color-coded according to type.
 	 	Fades after a period of time, defined in the setTimeout().
