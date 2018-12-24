@@ -45,7 +45,7 @@ object MainView {
 
 		<article id="main_Container">
 
-		<p id="menu"> <a href="http://www.homermultitext.org">The Homer Multitext</a> | <a href="http://homermultitext.blogspot.com">HMT Blog</a> </p>
+		<p id="menu"> <a href="http://www.homermultitext.org">The Homer Multitext</a> </p>
 
 		{ MainView.mainMessageDiv.bind }
 		{ MainView.collectionSelector.bind }
