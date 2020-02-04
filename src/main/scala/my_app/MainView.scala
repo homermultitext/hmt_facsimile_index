@@ -13,6 +13,7 @@ import org.scalajs.dom.raw.Event
 import org.scalajs.dom.ext.Ajax
 import edu.holycross.shot.cite._
 import edu.holycross.shot.ohco2._
+import edu.holycross.shot.dse._
 import edu.holycross.shot.greek._
 import edu.holycross.shot.citeobj._
 import scala.scalajs.js.annotation.JSExport
@@ -22,7 +23,7 @@ import monix.execution.Scheduler.Implicits.global
 import monix.eval._
 
 
-@JSExportTopLevel("hmtIndex.MainView")
+@JSExportTopLevel("MainView")
 object MainView {
 
 
@@ -205,7 +206,7 @@ object MainView {
 	}
 
 	@dom
-	def facsLink(f:MainModel.FolioReport) = {
+	def facsLink(f: MainModel.FolioReport) = {
 		<span>
 		<a href={ s"${f.facsimileUrl.get}" }>Facsimile.</a>
 			<span class="otherViews">

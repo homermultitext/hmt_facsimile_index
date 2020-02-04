@@ -16,13 +16,14 @@ import scala.scalajs.js._
 import edu.holycross.shot.cite._
 import js.annotation._
 import edu.holycross.shot.scm._
+import edu.holycross.shot.dse._
 import edu.holycross.shot.citejson._
 import edu.holycross.shot.citeobj._
 import scala.scalajs.js.Dynamic.{ global => g }
 
 
 
-@JSExportTopLevel("hmtIndex.MainModel")
+@JSExportTopLevel("MainModel")
 object MainModel {
 
 	case class Facsimile(dseUrn:Cite2Urn, text:CtsUrn, label:String, url:String) {
@@ -69,7 +70,9 @@ object MainModel {
 				val imageUrn:Cite2Urn = o.propertyValue(imagePropUrn).asInstanceOf[Cite2Urn]
 				val surfaceUrn:Cite2Urn = o.propertyValue(surfacePropUrn).asInstanceOf[Cite2Urn]
 				val textUrn:CtsUrn = o.propertyValue(textPropUrn).asInstanceOf[CtsUrn]
-				val facsUrl:String = s"${currentFacsimile.value.get.url}${surfaceUrn.objectComponent}"
+				val facsUrl:String = s"${currentFacsimile.value.get.url}${urnToFileName(surfaceUrn)}"
+
+					//s"${currentFacsimile.value.get.url}${surfaceUrn.objectComponent}"
 				MainModel.FolioReport(Some(surfaceUrn), Some(imageUrn), textUrn, Some(facsUrl))
 			})
 			folioVector
@@ -128,5 +131,39 @@ object MainModel {
 		returnUrn
 	}	
 
+ /** A function: Given a URN and a number, generate a file-name. */
+  def urnToFileName( urn: Urn, index: Option[Int] = None ): String = {
+    urn match {
+      case CtsUrn(_) => {
+          urnToFileName( urn.asInstanceOf[CtsUrn], index )
+      }
+      case _ => {
+          urnToFileName( urn.asInstanceOf[Cite2Urn], index )
+      }
+    }
+  }
+  def urnToFileName( urn: CtsUrn, index: Option[Int] ): String = {
+    val baseName: String = urn.workParts.mkString("_")
+    index match {
+      case Some(i) => {
+        s"${baseName}_${i}.html"
+      }
+      case None => {
+        s"${baseName}.html"
+      }
+    }
+  }
+
+   def urnToFileName( urn: Cite2Urn, index: Option[Int] ): String = {
+    val baseName: String = urn.toString.replaceAll(":","_").replaceAll("\\.","-")
+    index match {
+      case Some(i) => {
+        s"${baseName}_${i}.html"
+      }
+      case None => {
+        s"${baseName}.html"
+      }
+    }
+  }
 
 }

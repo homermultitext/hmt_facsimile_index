@@ -14,6 +14,7 @@ import org.scalajs.dom.ext._
 import org.scalajs.dom.raw._
 import edu.holycross.shot.cite._
 import edu.holycross.shot.scm._
+import edu.holycross.shot.dse._
 import edu.holycross.shot.ohco2._
 import edu.holycross.shot.citeobj._
 import edu.holycross.shot.citejson._
@@ -25,7 +26,7 @@ import monix.eval._
 
 import scala.scalajs.js.annotation.JSExport
 
-@JSExportTopLevel("hmtIndex.MainController")
+@JSExportTopLevel("MainController")
 object MainController {
 
 

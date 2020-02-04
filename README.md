@@ -4,7 +4,7 @@ A single-page web-application for navigating the [Homer Multitext Online Facsimi
 
 ## Current Version
 
-1.1.0
+2.0.0
 
 ## License
 
